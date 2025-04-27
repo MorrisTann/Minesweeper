@@ -1,26 +1,26 @@
 [
 {
-  "directory": "C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/morri/CLionProjects/miinitaja/include -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Laud.cpp.obj -c C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Laud.cpp",
-  "file": "C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Laud.cpp",
-  "output": "CMakeFiles\\miinitaja.dir\\src\\Laud.cpp.obj"
+  "directory": "C:/Users/hanne/UT programmeerimine/Minesweeper/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\G__~1.EXE  @CMakeFiles/miinitaja.dir/includes_CXX.rsp -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Laud.cpp.obj -c \"C:\\Users\\hanne\\UT programmeerimine\\Minesweeper\\src\\Laud.cpp\"",
+  "file": "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Laud.cpp",
+  "output": "CMakeFiles/miinitaja.dir/src/Laud.cpp.obj"
 },
 {
-  "directory": "C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/morri/CLionProjects/miinitaja/include -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Main.cpp.obj -c C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Main.cpp",
-  "file": "C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Main.cpp",
-  "output": "CMakeFiles\\miinitaja.dir\\src\\Main.cpp.obj"
+  "directory": "C:/Users/hanne/UT programmeerimine/Minesweeper/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\G__~1.EXE  @CMakeFiles/miinitaja.dir/includes_CXX.rsp -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Main.cpp.obj -c \"C:\\Users\\hanne\\UT programmeerimine\\Minesweeper\\src\\Main.cpp\"",
+  "file": "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Main.cpp",
+  "output": "CMakeFiles/miinitaja.dir/src/Main.cpp.obj"
 },
 {
-  "directory": "C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/morri/CLionProjects/miinitaja/include -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Mang.cpp.obj -c C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Mang.cpp",
-  "file": "C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Mang.cpp",
-  "output": "CMakeFiles\\miinitaja.dir\\src\\Mang.cpp.obj"
+  "directory": "C:/Users/hanne/UT programmeerimine/Minesweeper/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\G__~1.EXE  @CMakeFiles/miinitaja.dir/includes_CXX.rsp -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Mang.cpp.obj -c \"C:\\Users\\hanne\\UT programmeerimine\\Minesweeper\\src\\Mang.cpp\"",
+  "file": "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Mang.cpp",
+  "output": "CMakeFiles/miinitaja.dir/src/Mang.cpp.obj"
 },
 {
-  "directory": "C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.2\\bin\\mingw\\bin\\G__~1.EXE -IC:/Users/morri/CLionProjects/miinitaja/include -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Ruut.cpp.obj -c C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Ruut.cpp",
-  "file": "C:\\Users\\morri\\CLionProjects\\miinitaja\\src\\Ruut.cpp",
-  "output": "CMakeFiles\\miinitaja.dir\\src\\Ruut.cpp.obj"
+  "directory": "C:/Users/hanne/UT programmeerimine/Minesweeper/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\G__~1.EXE  @CMakeFiles/miinitaja.dir/includes_CXX.rsp -g -std=gnu++23 -fdiagnostics-color=always -o CMakeFiles\\miinitaja.dir\\src\\Ruut.cpp.obj -c \"C:\\Users\\hanne\\UT programmeerimine\\Minesweeper\\src\\Ruut.cpp\"",
+  "file": "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Ruut.cpp",
+  "output": "CMakeFiles/miinitaja.dir/src/Ruut.cpp.obj"
 }
 ]

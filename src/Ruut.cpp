@@ -4,15 +4,12 @@ Ruut::Ruut() = default;
 
 char Ruut::kuva() const
 {
-    if (_avatud)
-    {
-        if (_onMiin)          return '*';
-        if (_naabriMiinid==0) return ' ';
-        return static_cast<char>('0' + _naabriMiinid);
-    }
-    else
-    {
-        if (_lipustatud) return 'F';
+    if (avatud) {
+        if (KasMiin)          return '*';
+        if (naaberMiinideArv==0) return ' ';
+        return static_cast<char>('0' + naaberMiinideArv);
+    } else {
+        if (lipustatud) return 'F';
         return '#';
     }
 }

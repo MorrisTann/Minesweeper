@@ -3,14 +3,14 @@
 cmake_policy(SET CMP0009 NEW)
 
 # ALL_SRCS at CMakeLists.txt:8 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/morri/CLionProjects/miinitaja/src/*.cpp")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/hanne/UT programmeerimine/Minesweeper/src/*.cpp")
 set(OLD_GLOB
-  "C:/Users/morri/CLionProjects/miinitaja/src/Laud.cpp"
-  "C:/Users/morri/CLionProjects/miinitaja/src/Main.cpp"
-  "C:/Users/morri/CLionProjects/miinitaja/src/Mang.cpp"
-  "C:/Users/morri/CLionProjects/miinitaja/src/Ruut.cpp"
+  "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Laud.cpp"
+  "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Main.cpp"
+  "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Mang.cpp"
+  "C:/Users/hanne/UT programmeerimine/Minesweeper/src/Ruut.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "C:/Users/hanne/UT programmeerimine/Minesweeper/cmake-build-debug/CMakeFiles/cmake.verify_globs")
 endif()

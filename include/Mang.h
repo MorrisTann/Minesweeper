@@ -1,9 +1,8 @@
 #pragma once
 #include "Laud.h"
 
-/// Lihtne käsurea-mängutsükkel
-class Mang
-{
+
+class Mang {
 public:
     Mang(int read, int veerud, int miinid);
 
@@ -11,7 +10,7 @@ public:
     int käivita();
 
 private:
-    Laud _laud;
+    Laud laud;
 
     /// Töötle ühe rea kasutaja sisendit.  Tagastab false, kui mäng läbi.
     bool töötleSisend(const std::string& rida);

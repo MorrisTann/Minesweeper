@@ -8,27 +8,27 @@ public:
     Ruut();
 
     /// Kas ruudus on miin?
-    bool onMiin() const                         { return _onMiin; }
-    void seaMiin(bool val = true)               { _onMiin = val;  }
+    bool onMiin() const                         { return KasMiin; }
+    void seaMiin(bool val = true)               { KasMiin = val;  }
 
     /// Kas ruut on juba avatud?
-    bool onAvatud() const                       { return _avatud; }
-    void ava()                                  { _avatud = true; }
+    bool onAvatud() const                       { return avatud; }
+    void ava()                                  { avatud = true; }
 
     /// Kas kasutaja on siia lipu pannud?
-    bool onLipustatud() const                   { return _lipustatud; }
-    void lülitaLipp()                           { _lipustatud = !_lipustatud; }
+    bool onLipustatud() const                   { return lipustatud; }
+    void lülitaLipp()                           { lipustatud = !lipustatud; }
 
     /// Naabermiine näitav arv
-    int naabriMiinid() const                    { return _naabriMiinid; }
-    void seaNaabriMiinid(int n)                 { _naabriMiinid = n; }
+    int naabriMiinid() const                    { return naaberMiinideArv; }
+    void seaNaabriMiinid(int n)                 { naaberMiinideArv = n; }
 
     /// Sümbol ekraanil (CLI-vaates)
     char kuva() const;
 
 private:
-    bool _onMiin        {false};
-    bool _avatud        {false};
-    bool _lipustatud    {false};
-    int  _naabriMiinid  {0};
+    bool KasMiin        {false};
+    bool avatud        {false};
+    bool lipustatud    {false};
+    int  naaberMiinideArv  {0};
 };

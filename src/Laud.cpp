@@ -4,8 +4,8 @@
 #include <queue>
 
 Laud::Laud(int read, int veerud, int miinid)
-    : _read(read), _veerud(veerud), _miinid(miinid),
-      _ruudud(read, std::vector<Ruut>(veerud))
+    : read(read), veerud(veerud), miinid(miinid),
+      ruudud(read, std::vector<Ruut>(veerud))
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -13,22 +13,20 @@ Laud::Laud(int read, int veerud, int miinid)
     std::uniform_int_distribution<> distC(0, veerud-1);
 
     int paigutatud = 0;
-    while (paigutatud < miinid)
-    {
+    while (paigutatud < miinid) {
         int r = distR(gen);
-        int c = distC(gen);
-        if (!_ruudud[r][c].onMiin())
-        {
-            _ruudud[r][c].seaMiin();
+        int v = distC(gen);
+        if (!ruudud[r][v].onMiin()) {
+            ruudud[r][v].seaMiin();
             ++paigutatud;
         }
     }
     arvutaNaabrid();
 }
 
-bool Laud::piirides(int r, int c) const
-{
-    return r >= 0 && r < _read && c >= 0 && c < _veerud;
+bool Laud::piirides(int r, int v) const {
+
+    return r >= 0 && r < read && v >= 0 && v < veerud;
 }
 
 void Laud::arvutaNaabrid()
@@ -36,13 +34,13 @@ void Laud::arvutaNaabrid()
     const int dr[8] = {-1,-1,-1,0,0,1,1,1};
     const int dc[8] = {-1,0,1,-1,1,-1,0,1};
 
-    for (int r = 0; r < _read; ++r)
+    for (int r = 0; r < read; ++r)
     {
-        for (int c = 0; c < _veerud; ++c)
+        for (int c = 0; c < veerud; ++c)
         {
-            if (_ruudud[r][c].onMiin())
+            if (ruudud[r][c].onMiin())
             {
-                _ruudud[r][c].seaNaabriMiinid(-1);
+                ruudud[r][c].seaNaabriMiinid(-1);
                 continue;
             }
             int summa = 0;
@@ -50,24 +48,24 @@ void Laud::arvutaNaabrid()
             {
                 int nr = r + dr[k];
                 int nc = c + dc[k];
-                if (piirides(nr, nc) && _ruudud[nr][nc].onMiin())
+                if (piirides(nr, nc) && ruudud[nr][nc].onMiin())
                     ++summa;
             }
-            _ruudud[r][c].seaNaabriMiinid(summa);
+            ruudud[r][c].seaNaabriMiinid(summa);
         }
     }
 }
 
 bool Laud::avaRuut(int r, int c)
 {
-    if (!piirides(r, c) || _ruudud[r][c].onAvatud() || _ruudud[r][c].onLipustatud())
+    if (!piirides(r, c) || ruudud[r][c].onAvatud() || ruudud[r][c].onLipustatud())
         return true; // ei midagi juhtunud
 
-    _ruudud[r][c].ava();
-    if (_ruudud[r][c].onMiin())
+    ruudud[r][c].ava();
+    if (ruudud[r][c].onMiin())
         return false; // kaotus
 
-    if (_ruudud[r][c].naabriMiinid() == 0)
+    if (ruudud[r][c].naabriMiinid() == 0)
         laiendaTühjad(r, c);
 
     return true;
@@ -92,7 +90,7 @@ void Laud::laiendaTühjad(int sr, int sc)
             int nc = c + dc[k];
             if (!piirides(nr, nc)) continue;
 
-            Ruut& ruut = _ruudud[nr][nc];
+            Ruut& ruut = ruudud[nr][nc];
             if (ruut.onAvatud() || ruut.onLipustatud()) continue;
 
             ruut.ava();
@@ -104,13 +102,13 @@ void Laud::laiendaTühjad(int sr, int sc)
 
 void Laud::lülitaLipp(int r, int c)
 {
-    if (piirides(r, c) && !_ruudud[r][c].onAvatud())
-        _ruudud[r][c].lülitaLipp();
+    if (piirides(r, c) && !ruudud[r][c].onAvatud())
+        ruudud[r][c].lülitaLipp();
 }
 
 bool Laud::kasVõit() const
 {
-    for (const auto& rida : _ruudud)
+    for (const auto& rida : ruudud)
         for (const auto& ruut : rida)
             if (!ruut.onMiin() && !ruut.onAvatud())
                 return false;
@@ -128,19 +126,19 @@ void Laud::prindi(bool näitaKõik) const
 
     // Veerupäis
     std::cout << "    ";
-    for (int c = 0; c < _veerud; ++c)
+    for (int c = 0; c < veerud; ++c)
         std::cout << c % 10 << " ";
     std::cout << "\n  +";
-    for (int c = 0; c < _veerud * 2 - 1; ++c)
+    for (int c = 0; c < veerud * 2 - 1; ++c)
         std::cout << "-";
     std::cout << "+\n";
 
-    for (int r = 0; r < _read; ++r)
+    for (int r = 0; r < read; ++r)
     {
         std::cout << r % 10 << " | ";
-        for (int c = 0; c < _veerud; ++c)
+        for (int c = 0; c < veerud; ++c)
         {
-            const Ruut& ruut = _ruudud[r][c];
+            const Ruut& ruut = ruudud[r][c];
             char s = näitaKõik && ruut.onMiin() ? '*' : ruut.kuva();
 
             if (s == '#')
@@ -158,7 +156,7 @@ void Laud::prindi(bool näitaKõik) const
     }
 
     std::cout << "  +";
-    for (int c = 0; c < _veerud * 2 - 1; ++c)
+    for (int c = 0; c < veerud * 2 - 1; ++c)
         std::cout << "-";
     std::cout << "+\n";
 }

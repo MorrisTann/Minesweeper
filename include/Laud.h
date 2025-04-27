@@ -4,12 +4,11 @@
 #include <string>
 
 /// Kogu mängulaud
-class Laud
-{
+class Laud {
 public:
     Laud(int read, int veerud, int miinid);
 
-    /// Ava ruut (r, c). Tagastab false, kui avati miin.
+    /// Ava ruut (r, v). Tagastab false, kui avati miin.
     bool avaRuut(int rida, int veerg);
 
     /// Lülita lipu/küsimärgi olekut
@@ -21,17 +20,17 @@ public:
     /// Prindi laud käsureale
     void prindi(bool näitaKõik=false) const;
 
-    int ridadeArv()  const { return _read;   }
-    int veergudeArv() const { return _veerud; }
+    int ridadeArv()  const { return read;   }
+    int veergudeArv() const { return veerud; }
+
+    bool piirides(int r, int v) const;
 
 private:
-    int _read;
-    int _veerud;
-    int _miinid;
+    int read;
+    int veerud;
+    int miinid;
 
-    std::vector<std::vector<Ruut>> _ruudud;
-
-    bool piirides(int r, int c) const;
+    std::vector<std::vector<Ruut>> ruudud;
 
     /// Arvuta ja salvesta kõigi ruutude naabermiini arvud
     void arvutaNaabrid();
