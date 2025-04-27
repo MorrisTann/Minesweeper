@@ -1,0 +1,23 @@
+# ninja log v6
+34	1392	7674550938282547	build.ninja	b2337ea265a2ec89
+192	361	7674550681926302	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+4	74	7674550966914907	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+281	2156	7674550969680805	CMakeFiles/miinitaja.dir/src/Ruut.cpp.obj	c753a355a2f0d726
+221	2324	7674550969097852	CMakeFiles/miinitaja.dir/src/Main.cpp.obj	e20060bfd840a452
+250	2849	7674550969380842	CMakeFiles/miinitaja.dir/src/Mang.cpp.obj	24a98589caec869d
+77	4663	7674550967642594	CMakeFiles/miinitaja.dir/src/Laud.cpp.obj	10eb049d7e119c3a
+4666	5658	7674551013536800	miinitaja.exe	46bb724edeb8fcfe
+27	117	7674552136719112	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+24	104	7674554215005743	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+118	3993	7674554215941799	CMakeFiles/miinitaja.dir/src/Laud.cpp.obj	10eb049d7e119c3a
+56	136	7674554559420823	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+30	112	7674554999444540	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+130	1008	7674555000450121	miinitaja.exe	46bb724edeb8fcfe
+34	184	7674557176427351	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+219	4909	7674557178289069	CMakeFiles/miinitaja.dir/src/Laud.cpp.obj	10eb049d7e119c3a
+4911	5706	7674557225196906	miinitaja.exe	46bb724edeb8fcfe
+79	210	7674564619886551	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+10	79	7674567420751711	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1
+93	3412	7674567421586584	CMakeFiles/miinitaja.dir/src/Mang.cpp.obj	24a98589caec869d
+3414	4322	7674567454798608	miinitaja.exe	46bb724edeb8fcfe
+8	80	7674577746658696	C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/cmake.verify_globs	e9ff48e0d89be7a1

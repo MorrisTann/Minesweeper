@@ -1,0 +1,3 @@
+C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/miinitaja.dir
+C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/morri/CLionProjects/miinitaja/cmake-build-debug/CMakeFiles/rebuild_cache.dir
