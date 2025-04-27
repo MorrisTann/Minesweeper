@@ -4,7 +4,7 @@ Ruut::Ruut() = default;
 
 char Ruut::kuva() const {
     if (avatud) {
-        if (KasMiin) return '*';
+        if (kasMiin) return '*';
         if (naaberMiinideArv == 0) return ' ';
         return static_cast<char>('0' + naaberMiinideArv);
     } else {

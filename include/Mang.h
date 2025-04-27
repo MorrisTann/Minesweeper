@@ -1,6 +1,6 @@
 #pragma once
 #include "Laud.h"
-
+#include <string>
 
 class Mang {
 public:

@@ -7,8 +7,8 @@ public:
     Ruut();
 
     // Kas ruudus on miin?
-    bool onMiin() const { return KasMiin; }
-    void seaMiin(bool val = true) { KasMiin = val; }
+    bool onMiin() const { return kasMiin; }
+    void seaMiin(bool val = true) { kasMiin = val; }
 
     // Kas ruut on juba avatud?
     bool onAvatud() const { return avatud; }
@@ -26,7 +26,7 @@ public:
     char kuva() const;
 
 private:
-    bool KasMiin{false};
+    bool kasMiin{false};
     bool avatud{false};
     bool lipustatud{false};
     int naaberMiinideArv{0};
