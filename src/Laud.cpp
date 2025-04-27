@@ -10,13 +10,13 @@ Laud::Laud(int read, int veerud, int miinid)
       ruudud(read, std::vector<Ruut>(veerud)) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distR(0, read - 1);
-    std::uniform_int_distribution<> distC(0, veerud - 1);
+    std::uniform_int_distribution<> randomR(0, read - 1);
+    std::uniform_int_distribution<> randomV(0, veerud - 1);
 
     int paigutatud = 0;
     while (paigutatud < miinid) {
-        int r = distR(gen);
-        int v = distC(gen);
+        int r = randomR(gen);
+        int v = randomV(gen);
         if (!ruudud[r][v].onMiin()) {
             ruudud[r][v].seaMiin();
             ++paigutatud;
@@ -30,8 +30,8 @@ bool Laud::piirides(int r, int v) const {
 }
 
 void Laud::arvutaNaabrid() {
-    const int niheR[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
-    const int niheV[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+    constexpr int niheR[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+    constexpr int niheV[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
     for (int r = 0; r < read; ++r) {
         for (int v = 0; v < veerud; ++v) {
@@ -52,8 +52,10 @@ void Laud::arvutaNaabrid() {
 }
 
 bool Laud::avaRuut(int r, int v) {
-    if (!piirides(r, v) || ruudud[r][v].onAvatud() || ruudud[r][v].onLipustatud())
+    if (!piirides(r, v) || ruudud[r][v].onAvatud() || ruudud[r][v].onLipustatud()) {
+        std::cout << "Ruut on kas piiridest väljas, juba varem avatud, või lipp peale pandud!\n";
         return true; // kui on midagi tehtud
+    }
 
     ruudud[r][v].ava();
     if (ruudud[r][v].onMiin())
@@ -66,8 +68,8 @@ bool Laud::avaRuut(int r, int v) {
 }
 
 void Laud::laiendaTühjad(int start_r, int start_v) {
-    const int nihe_r[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
-    const int nihe_v[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+    constexpr int nihe_r[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+    constexpr int nihe_v[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
     std::queue<std::pair<int, int> > jär;
     jär.emplace(start_r, start_v);
@@ -93,9 +95,9 @@ void Laud::laiendaTühjad(int start_r, int start_v) {
     }
 }
 
-void Laud::lülitaLipp(int r, int c) {
-    if (piirides(r, c) && !ruudud[r][c].onAvatud())
-        ruudud[r][c].lülitaLipp();
+void Laud::lülitaLipp(int r, int v) {
+    if (piirides(r, v) && !ruudud[r][v].onAvatud())
+        ruudud[r][v].lülitaLipp();
 }
 
 bool Laud::kasVõit() const {
@@ -107,44 +109,42 @@ bool Laud::kasVõit() const {
 }
 
 void Laud::prindi(bool näitaKõik) const {
+    //näitaKõik on et kas näitab kõik miinid
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define BLUE    "\033[34m"
 #define GRAY    "\033[90m"
 
-    const int lahtriLaius = 3; // 3: 1 koht numbrile ja 2 väikest vahet
+    constexpr int lahtriLaius = 3;
 
-    // Veerupäis (keskjoondatud)
     std::cout << "     "; // ruumi rea numbrite jaoks
     for (int v = 0; v < veerud; ++v)
         std::cout << std::setw(lahtriLaius) << v;
-    std::cout << "\n   +";
+    std::cout << "\n     +";
     for (int v = 0; v < veerud * lahtriLaius; ++v)
         std::cout << "-";
     std::cout << "+\n";
 
     for (int r = 0; r < read; ++r) {
         std::cout << std::setw(3) << r << " |";
-        for (int c = 0; c < veerud; ++c) {
-            const Ruut &ruut = ruudud[r][c];
-            char s = näitaKõik && ruut.onMiin() ? '*' : ruut.kuva();
+        for (int v = 0; v < veerud; ++v) {
+            const Ruut &ruut = ruudud[r][v];
+            char märk = näitaKõik && ruut.onMiin() ? '*' : ruut.kuva();
 
-            if (s == '#')
-                std::cout << GRAY << std::setw(lahtriLaius) << s << RESET;
-            else if (s == 'F')
-                std::cout << RED << std::setw(lahtriLaius) << s << RESET;
-            else if (s == '*')
-                std::cout << RED << std::setw(lahtriLaius) << s << RESET;
-            else if (s >= '1' && s <= '8')
-                std::cout << BLUE << std::setw(lahtriLaius) << s << RESET;
-            else // tühi ruut
-                std::cout << std::setw(lahtriLaius) << s;
+            if (märk == '#')
+                std::cout << GRAY << std::setw(lahtriLaius) << märk << RESET;
+            else if (märk == 'F' || märk == '*')
+                std::cout << RED << std::setw(lahtriLaius) << märk << RESET;
+            else if (märk >= '1' && märk <= '8')
+                std::cout << BLUE << std::setw(lahtriLaius) << märk << RESET;
+            else
+                std::cout << std::setw(lahtriLaius) << märk;
         }
-        std::cout << " |\n";
+        std::cout << "  |\n";
     }
 
-    std::cout << "   +";
-    for (int c = 0; c < veerud * lahtriLaius; ++c)
+    std::cout << "     +";
+    for (int v = 0; v < veerud * lahtriLaius; ++v)
         std::cout << "-";
     std::cout << "+\n";
 }

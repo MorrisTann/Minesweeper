@@ -9,7 +9,7 @@ Mang::Mang(int read, int veerud, int miinid)
 int Mang::käivita() {
     std::cout << "Tere tulemast mängima Minesweeperit!\n"
             "Käsud:\n"
-            "  e              - lõpetab programmi töö"
+            "  e              - lõpetab programmi töö\n"
             "  o RIDA VEERG   - astu ruudule\n"
             "  f RIDA VEERG   - märgista miiniga (märgistab F tähega (Flag))\n"
             "Reanumbrid ja veerunumbrid algavad nullist.\n"
@@ -66,6 +66,7 @@ bool Mang::töötleSisend(const std::string &rida) {
         case 'f':
         case 'F':
             laud.lülitaLipp(r, v);
+            std::cout << "Lipp lisatud!";
             break;
 
         default:

@@ -3,21 +3,21 @@
 #include <vector>
 #include <string>
 
-/// Kogu mängulaud
+// Kogu mängulaud
 class Laud {
 public:
     Laud(int read, int veerud, int miinid);
 
-    /// Ava ruut (r, v). Tagastab false, kui avati miin.
+    // Ava ruut (r, v). Tagastab false, kui avati miin.
     bool avaRuut(int rida, int veerg);
 
-    /// Lülita lipu/küsimärgi olekut
+    // Lülita lipu/küsimärgi olekut
     void lülitaLipp(int rida, int veerg);
 
-    /// Kas mäng on võidetud?
+    // Kas mäng on võidetud?
     bool kasVõit() const;
 
-    /// Prindi laud käsureale
+    // Prindi laud käsureale
     void prindi(bool näitaKõik = false) const;
 
     int ridadeArv() const { return read; }
@@ -32,9 +32,9 @@ private:
 
     std::vector<std::vector<Ruut> > ruudud;
 
-    /// Arvutab ja salvestab kõikide ruutude naabermiinide koguse
+    // Arvutab ja salvestab kõikide ruutude naabermiinide koguse
     void arvutaNaabrid();
 
-    /// Rekursiivne lahtiklapitus tühjade ruutudele
-    void laiendaTühjad(int r, int c);
+    // Rekursiivne lahtiklapitus tühjade ruutudele
+    void laiendaTühjad(int r, int v);
 };
