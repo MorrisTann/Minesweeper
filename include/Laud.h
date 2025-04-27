@@ -18,9 +18,9 @@ public:
     bool kasVõit() const;
 
     /// Prindi laud käsureale
-    void prindi(bool näitaKõik=false) const;
+    void prindi(bool näitaKõik = false) const;
 
-    int ridadeArv()  const { return read;   }
+    int ridadeArv() const { return read; }
     int veergudeArv() const { return veerud; }
 
     bool piirides(int r, int v) const;
@@ -30,9 +30,9 @@ private:
     int veerud;
     int miinid;
 
-    std::vector<std::vector<Ruut>> ruudud;
+    std::vector<std::vector<Ruut> > ruudud;
 
-    /// Arvuta ja salvesta kõigi ruutude naabermiini arvud
+    /// Arvutab ja salvestab kõikide ruutude naabermiinide koguse
     void arvutaNaabrid();
 
     /// Rekursiivne lahtiklapitus tühjade ruutudele

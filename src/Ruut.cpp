@@ -2,11 +2,10 @@
 
 Ruut::Ruut() = default;
 
-char Ruut::kuva() const
-{
+char Ruut::kuva() const {
     if (avatud) {
-        if (KasMiin)          return '*';
-        if (naaberMiinideArv==0) return ' ';
+        if (KasMiin) return '*';
+        if (naaberMiinideArv == 0) return ' ';
         return static_cast<char>('0' + naaberMiinideArv);
     } else {
         if (lipustatud) return 'F';

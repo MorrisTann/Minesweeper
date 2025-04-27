@@ -15,7 +15,7 @@ public:
     bool onAvatud() const                       { return avatud; }
     void ava()                                  { avatud = true; }
 
-    /// Kas kasutaja on siia lipu pannud?
+    /// Näitab kas kasutaja on ruudu lipustanud
     bool onLipustatud() const                   { return lipustatud; }
     void lülitaLipp()                           { lipustatud = !lipustatud; }
 
@@ -23,7 +23,7 @@ public:
     int naabriMiinid() const                    { return naaberMiinideArv; }
     void seaNaabriMiinid(int n)                 { naaberMiinideArv = n; }
 
-    /// Sümbol ekraanil (CLI-vaates)
+    /// Sümbol ekraanil
     char kuva() const;
 
 private:
